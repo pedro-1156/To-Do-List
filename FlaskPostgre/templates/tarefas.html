@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fullstack</title>
+</head>
+<body>
+<form method = 'POST'>
+    <input type="text" name="titulo" placeholder="Título" required>
+    <button type = 'submit'>Criar</button>
+</form>
+{% if tarefas %}
+    {% for tarefa in tarefas %}
+        {{ tarefa[1] }} - {{ 'Feito' if tarefa[2] else 'Não feito' }} <a href="{{ url_for('feito', id=tarefa[0]) if not tarefa[2] else '#' }}">
+    {{ '[Marcar como feito]' if not tarefa[2] else '' }}
+</a>
+
+    {% endfor %}
+{% endif %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    body {
+        background: linear-gradient(135deg, #f5985b, #f55b5b);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+    a {
+        text-decoration: none;
+        font-size: small;
+    }
+    </style>
+</body>
+</html>
