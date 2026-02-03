@@ -38,7 +38,7 @@ def tarefas():
         conn = connect_db()
         cursor = conn.cursor()
         titulo = request.form["titulo"]
-        cursor.execute("""INSERT INTO tarefas (titulo, feito) VALUES (%s, %s)""", (titulo, False))
+        cursor.execute("INSERT INTO tarefas (titulo, feito) VALUES (%s, %s)", (titulo, False))
         conn.commit()
         cursor.close()
         conn.close()
@@ -55,4 +55,5 @@ def feito(id):
     return redirect('/tarefas')
 
 if __name__ == '__main__':
+
     app.run(debug=True)
