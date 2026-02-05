@@ -32,7 +32,7 @@ def tarefas():
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM tarefas ORDER BY id")
         tarefas = cursor.fetchall()
-        return render_template('tarefas.html', tarefas=tarefas)
+        return render_template('index.html', tarefas=tarefas)
     elif request.method == "POST":
         # Botao
         conn = connect_db()
@@ -57,3 +57,4 @@ def feito(id):
 if __name__ == '__main__':
 
     app.run(debug=True)
+
