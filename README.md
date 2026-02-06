@@ -9,8 +9,6 @@ This project lets users create, view, edit, and delete tasks — a classic start
 ---
 ✨ Add new tasks
 📋 View all tasks
-✏️ Edit existing tasks
-🗑️ Delete tasks
 💾 Stores tasks persistently in PostgreSQL
 
 🛠️ Built With
